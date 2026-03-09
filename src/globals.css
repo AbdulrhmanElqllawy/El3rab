@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* App theme tokens - Light */
+    --bg-base: #f8fafc;
+    --bg-section: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --bg-input: #ffffff;
+    --bg-overlay: rgba(15, 23, 42, 0.03);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-subtle: rgba(226, 232, 240, 0.7);
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.10);
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* App theme tokens - Dark */
+    --bg-base: #0f172a;
+    --bg-section: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-hover: #1e293b;
+    --bg-input: #1e293b;
+    --bg-overlay: rgba(255,255,255,0.025);
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: rgba(51, 65, 85, 0.7);
+    --border-subtle: rgba(51, 65, 85, 0.5);
+    --card-shadow: none;
+    --card-shadow-hover: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================
+   GLOBAL LIGHT MODE OVERRIDES
+   These override the hardcoded dark colors
+   when the html element does NOT have .dark
+   ============================================ */
+
+/* Page backgrounds */
+html:not(.dark) .bg-\[\#0F172A\],
+html:not(.dark) .bg-\[\#0A1120\] {
+  background-color: #f8fafc !important;
+}
+
+html:not(.dark) .bg-\[\#1E293B\] {
+  background-color: #ffffff !important;
+  box-shadow: var(--card-shadow);
+}
+
+html:not(.dark) .bg-\[\#0F172A\]\/95 {
+  background-color: rgba(248, 250, 252, 0.97) !important;
+}
+
+html:not(.dark) .bg-\[\#1E293B\]\/80,
+html:not(.dark) .bg-\[\#1E293B\]\/90 {
+  background-color: rgba(255,255,255,0.95) !important;
+}
+
+/* Text colors */
+html:not(.dark) .text-\[\#E2E8F0\] {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-\[\#94A3B8\] {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-\[\#CBD5E1\] {
+  color: #475569 !important;
+}
+
+html:not(.dark) .text-white {
+  color: #0f172a !important;
+}
+
+/* Override text-white inside gradient buttons (keep them white) */
+html:not(.dark) .bg-gradient-to-l .text-white,
+html:not(.dark) button.bg-gradient-to-l,
+html:not(.dark) [class*="bg-gradient"] .text-white {
+  color: #ffffff !important;
+}
+
+/* Border colors */
+html:not(.dark) .border-\[\#334155\]\/70,
+html:not(.dark) .border-\[\#334155\]\/50,
+html:not(.dark) .border-\[\#334155\]\/40,
+html:not(.dark) .border-\[\#334155\],
+html:not(.dark) .border-\[\#1E293B\] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Card inner backgrounds */
+html:not(.dark) .bg-\[\#0F172A\]\/60,
+html:not(.dark) .bg-\[\#0F172A\]\/50,
+html:not(.dark) .bg-\[\#0F172A\]\/40 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+/* Input fields */
+html:not(.dark) input,
+html:not(.dark) textarea {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #0f172a !important;
+}
+
+/* Footer stays dark always */
+html:not(.dark) footer.bg-\[\#0A1120\] {
+  background-color: #1e293b !important;
+}
+
+html:not(.dark) footer .text-\[\#E2E8F0\],
+html:not(.dark) footer .text-\[\#94A3B8\],
+html:not(.dark) footer .text-white {
+  color: inherit !important;
+}
+
+/* Smooth transitions on everything */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+}
+
+/* But don't override animation transitions */
+[class*="animate-"], [style*="animation"] {
+  transition-duration: initial;
+}
